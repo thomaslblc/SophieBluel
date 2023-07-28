@@ -6,28 +6,35 @@ function createWorkDOM(work, container, isModal = false) {
     const imageElement = document.createElement("img");
     imageElement.src = work.imageUrl;
     const captionElement = document.createElement("figcaption");
+    container.appendChild(figureElement);
+    figureElement.appendChild(imageElement);
+    figureElement.appendChild(captionElement);
     if (!isModal) {
         captionElement.innerText = work.title;
+        figureElement.dataset.workid = work.id;
     } else {
         captionElement.innerText = 'éditer'
         const trashIcon = document.createElement("i")
-        trashIcon.classList.add("fa-solid", "fa-trash")
+        trashIcon.classList.add("fa-solid", "fa-trash-can")
         figureElement.appendChild(trashIcon)
         trashIcon.addEventListener("click", () => {
+            /** 
             fetch("http://localhost:5678/api/works/" + work.id, {
                 method: 'DELETE',
                 headers: { Authorization: 'Bearer ' + localStorage.getItem('authToken') }
 
             })
+        
                 .then((response) => {
                     console.log(response)
                 })
+                */
+            figureElement.remove();
+            document.querySelector("figure[data-workid='"+work.id+"']").remove();
         })
     }
 
-    container.appendChild(figureElement);
-    figureElement.appendChild(imageElement);
-    figureElement.appendChild(captionElement);
+
 }
 fetch("http://localhost:5678/api/works").then((data) => data.json()).then((data) => {
     works = data
@@ -89,12 +96,19 @@ if (localStorage.getItem('authToken')) {
     modify_projects.classList.add('shown');
     const filters = document.getElementById('filters');
     filters.classList.add('hidden');
+    const login_topmenu = document.getElementById('login');
+    login_topmenu.classList.add('hidden');
+    const logout_topmenu = document.getElementById('logout');
+    logout_topmenu.classList.remove('hidden');
+    logout_topmenu.classList.add('shown');
 }
 /** Modale */
 const popup = document.querySelector(".popup");
 const popup_content = document.querySelector(".popup_content");
 const popup_btn = document.querySelector("#modify_projects");
 const popup_close = document.querySelector(".popup_close");
+const popup_addWork_btn = document.querySelector(".addphoto");
+const popup_addWork = document.querySelector(".popup_addWork");
 
 const openPopup = function () {
     popup.classList.remove("hidden");
@@ -106,15 +120,25 @@ popup_btn.addEventListener("click", openPopup);
 const closePopup = function () {
     popup.classList.add("hidden");
     popup_content.classList.add("hidden");
+    popup_addWork.classList.add("hidden");
 }
 
 popup_close.addEventListener("click", closePopup);
+/** Modale Add Works */
+
+const openAddWork = function () {
+    popup_content.classList.add("hidden");
+    popup_addWork.classList.remove("hidden");
+}
+
+popup_addWork_btn.addEventListener("click", openAddWork);
 
 popup.addEventListener("click", function (event) {
-    const isClickInside = popup_content.contains(event.target);
+    const isClickInside = popup_content.contains(event.target) + popup_addWork.contains(event.target);
     if (isClickInside) {
 
     } else {
         popup.classList.add("hidden");
+        popup_addWork.classList.add("hidden");
     }
 })
