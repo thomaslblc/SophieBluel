@@ -29,6 +29,7 @@ function createWorkDOM(work, container, isModal = false) {
                     console.log(response)
                 })
                 */
+               
             figureElement.remove();
             document.querySelector("figure[data-workid='"+work.id+"']").remove();
         })
