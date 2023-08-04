@@ -334,6 +334,10 @@ a:hover {
 	align-items: center;
 }
 
+#editor_mode button {
+	border: none;
+}
+
 #editor_mode .fa-pen-to-square {
 	font-size: 18px;
 	color: #fff;
@@ -449,6 +453,7 @@ a:hover {
 	text-align: center;
 	border-radius: 60px;
 	padding: 10px;
+	border: none;
 }
 
 .popup_content button:hover {
@@ -567,6 +572,7 @@ a:hover {
 	font-size: 17px;
 	padding: 10px;
 	margin-bottom: 5px;
+	border: none;
 }
 
 .addWork_preview p {
@@ -604,5 +610,6 @@ a:hover {
 	width: 180px;
 	text-align: center;
 	border-radius: 60px;
+	border: none;
 	padding: 10px;
 }

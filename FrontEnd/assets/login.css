@@ -59,6 +59,7 @@ a:hover {
 	text-align: center;
 	border-radius: 60px;
 	padding: 10px;
+	border: none;
 }
 
 .login button:hover {

@@ -103,6 +103,12 @@ if (localStorage.getItem('authToken')) {
     logout_topmenu.classList.remove('hidden');
     logout_topmenu.classList.add('shown');
 }
+/** Déconnexion */
+const logout_btn = document.getElementById('logout');
+logout_btn.addEventListener("click", function() {
+
+})
+
 /** Modale */
 const popup = document.querySelector(".popup");
 const popup_content = document.querySelector(".popup_content");
@@ -143,3 +149,24 @@ popup.addEventListener("click", function (event) {
         popup_addWork.classList.add("hidden");
     }
 })
+
+/** Ajout de l'image en prévisualisation */
+/**
+const addWork_input = document.getElementsByClassName("addWork_add");
+const addWork_preview = document.getElementsByClassName("addWork_preview");
+
+addWork.addEventListener('click', function() {
+    const imageFile = addWork_input.files[0];
+
+    //addWork_preview.remove
+/**
+    if(typeof imageFile !== 'undefined' && imageFile !== '') {
+        const readerImage = new FileReader();
+        readerImage.onload = function (event) {
+            const imageSrc = event.target.result;
+
+         };
+         readerImage.readAsDataURL(imageFile);
+    }
+})
+*/
