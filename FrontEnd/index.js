@@ -29,9 +29,9 @@ function createWorkDOM(work, container, isModal = false) {
                     console.log(response)
                 })
                 */
-               
+
             figureElement.remove();
-            document.querySelector("figure[data-workid='"+work.id+"']").remove();
+            document.querySelector("figure[data-workid='" + work.id + "']").remove();
         })
     }
 
@@ -105,8 +105,10 @@ if (localStorage.getItem('authToken')) {
 }
 /** Déconnexion */
 const logout_btn = document.getElementById('logout');
-logout_btn.addEventListener("click", function() {
-
+logout_btn.addEventListener("click", function (e) {
+    e.preventDefault();
+    localStorage.removeItem("authToken");
+    window.location.href = "login.html";
 })
 
 /** Modale */
@@ -151,22 +153,20 @@ popup.addEventListener("click", function (event) {
 })
 
 /** Ajout de l'image en prévisualisation */
-/**
-const addWork_input = document.getElementsByClassName("addWork_add");
-const addWork_preview = document.getElementsByClassName("addWork_preview");
 
-addWork.addEventListener('click', function() {
+const addWork_input = document.querySelector(".addWork_add");
+const addWork_preview = document.querySelector(".addWork_preview");
+
+addWork_input.addEventListener('change', function () {
     const imageFile = addWork_input.files[0];
 
-    //addWork_preview.remove
-/**
-    if(typeof imageFile !== 'undefined' && imageFile !== '') {
+    if (typeof imageFile !== 'undefined' && imageFile !== '') {
         const readerImage = new FileReader();
-        readerImage.onload = function (event) {
-            const imageSrc = event.target.result;
-
-         };
-         readerImage.readAsDataURL(imageFile);
+        readerImage.addEventListener('load', function () {
+            addWork_preview.src = readerImage.result;
+        }, false
+        )
+        readerImage.readAsDataURL(imageFile);
+        addWork_input.classList.add("hidden");
     }
 })
-*/
