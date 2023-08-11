@@ -156,6 +156,9 @@ popup.addEventListener("click", function (event) {
 
 const addWork_input = document.querySelector(".addWork_add");
 const addWork_preview = document.querySelector(".addWork_preview");
+const addWork_icon = document.querySelector(".fa-image");
+const addWork_label = document.querySelector('label[for="addWork_input"]');
+const addWork_p = document.querySelector(".addWork_p");
 
 addWork_input.addEventListener('change', function () {
     const imageFile = addWork_input.files[0];
@@ -167,6 +170,85 @@ addWork_input.addEventListener('change', function () {
         }, false
         )
         readerImage.readAsDataURL(imageFile);
+        addWork_Verification();
         addWork_input.classList.add("hidden");
+        addWork_icon.classList.add("hidden");
+        addWork_label.classList.add("hidden");
+        addWork_p.classList.add("hidden");
+
     }
 })
+
+const addWork_text = document.querySelector(".addWork_text")
+const addWork_category = document.querySelector("#addWork_category")
+const validation_btn = document.querySelector(".popup_addWork_validation")
+
+function addWork_Verification() {
+    let error = 0;
+    if (addWork_input.files[0] == 'undefined' || addWork_input.files[0] == '') {
+        error++
+    }
+    if (addWork_text.value == '') {
+        error++
+    }
+    if (addWork_category.value == '') {
+        error++
+    }
+    if (error === 0) {
+        validation_btn.setAttribute("disabled", false)
+    } else {
+        validation_btn.setAttribute("disabled", true)
+    }
+}
+
+addWork_category.addEventListener('change', addWork_Verification);
+addWork_text.addEventListener('change', addWork_Verification);
+
+
+/**
+ * 
+ MESSAGE D'ERREUR FORMULAIRE ADDWORK
+ */
+
+
+/**
+ * 
+ 
+const validationButton = document.querySelector(".popup_addWork_validation");
+
+validationButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    const emailValue = emailInput.value;
+    const passwordValue = passwordInput.value;
+
+    if (emailValue === '' || !isValidEmail(emailValue) || passwordValue === '') {
+        errorContainer.textContent = 'Veuillez remplir les champs correctement.';
+    } else {
+        let user = {
+            email: emailValue,
+            password: passwordValue
+        };
+        fetch("http://localhost:5678/api/users/login", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8'
+            },
+            body: JSON.stringify(user)
+        }).then((data) => {
+            if (data.status == 401) {
+                throw new Error('Mot de passe incorrect.');
+            }
+            if (data.status == 404) {
+                throw new Error('Utilisateur inconnu.');
+            }
+            return data.json()
+        }).then((data) => {
+            localStorage.setItem('authToken', data.token);
+            window.location.href = "index.html"
+        }).catch(error => {
+            errorContainer.textContent = error;
+        })
+    }
+});
+
+*/

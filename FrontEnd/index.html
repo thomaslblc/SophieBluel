@@ -147,26 +147,27 @@
 					<i class="fa-solid fa-xmark popup_close"></i>
 				</div>
 				<h2>Ajout photo</h2>
-				<div>
+				<div class="addWork_block">
 					<img src="" class="addWork_preview">
 					<!--Voir si besoin de changer icone en image-->
 					<i class="fa-solid fa-image"></i>
-					<input type="file" class="addWork_add">+ Ajouter photo</input>
-					<p>jpg, png : 4mo max</p>
+					<input type="file" class="addWork_add" id="addWork_input">
+					<label for="addWork_input">+ Ajouter photo</label>
+					<p class="addWork_p">jpg, png : 4mo max</p>
 				</div>
 				<div class="categorization">
 					<label for="work_title">Titre</label>
-					<input type="text" class="addWork_input">
+					<input type="text" class="addWork_input addWork_text">
 					<label for="work_category">Catégorie</label>
 					<select name="addWork_category" id="addWork_category" class="addWork_input">
-						<option value="#"></option>
+						<option value=""></option>
 						<option value="objets">Objets</option>
 						<option value="appartements">Appartements</option>
 						<option value="hôtels & restaurants">Hôtels & restaurants</option>
 					</select>
 				</div>
 				<div class="modalStyleBar"></div>
-				<button class="popup_addWork_validation">Valider</button>
+				<button class="popup_addWork_validation" disabled="true">Valider</button>
 			</div>
 		</div>
 	</footer>

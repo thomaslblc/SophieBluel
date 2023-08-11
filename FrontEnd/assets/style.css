@@ -520,7 +520,7 @@ a:hover {
 	position: relative;
 	width: 40%;
 	z-index: 2;
-	height: 630px;
+	height: 620px;
 	background-color: white;
 	border-radius: 10px;
 	display: flex;
@@ -546,38 +546,54 @@ a:hover {
 }
 
 .addWork_preview {
-	background-color: #E8F1F6;
-	width: 80%;
-	display: flex;
-	flex-direction: column;
-	margin-top: 20px;
-	border-radius: 3px;
+	width: 100%;
+	object-fit: cover;
+	margin-right: auto;
+	margin-left: auto;
+	border-radius: 5px;
 }
 
-.addWork_preview i {
+.addWork_block {
+	display: flex;
+	flex-direction: column;
+	max-width: 30%;
+	background-color: #E8F1F6;
+	color: rgb(18, 100, 121);
+	text-align: center;
+	border-radius: 10px;
+	font-weight: 550;
+	font-size: 17px;
+	padding-left: 25%;
+	padding-right: 25%;
+	margin-bottom: 10px;
+	margin-top: 20px;
+	border: none;
+}
+
+.addWork_block i {
 	opacity: 0.2;
 	font-size: 60px;
 	margin: 30px 0 25px ;
 }
 
 .addWork_add {
-	color: rgb(18, 100, 121);
-	background-color: rgba(0, 0, 0, 0.2);
-	margin-left: auto;
-	margin-right: auto;
-	width: 180px;
-	text-align: center;
-	border-radius: 60px;
-	font-weight: 550;
-	font-size: 17px;
-	padding: 10px;
-	margin-bottom: 5px;
-	border: none;
+	display: none;
 }
 
-.addWork_preview p {
+.addWork_block label {
+	background-color: rgba(0, 0, 0, 0.2);
+	padding: 10px 20px;
+	border-radius: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.addWork_block p {
 	margin-bottom: 15px;
 	color: #444444;
+	font-size: 12px;
+	margin-top: 5px;
 }
 
 .categorization {
