@@ -140,7 +140,7 @@ for (let close_Mark of popup_close) {
     close_Mark.addEventListener("click", closePopup);
 }
 
-const modalReturn = function() {
+const modalReturn = function () {
     popup_addWork.classList.add("hidden");
     popup_content.classList.remove("hidden");
 }
@@ -199,6 +199,7 @@ addWork_input.addEventListener('change', function () {
 const addWork_text = document.querySelector(".addWork_text")
 const addWork_category = document.querySelector("#addWork_category")
 const validation_btn = document.querySelector(".popup_addWork_validation")
+const addWork_error = document.querySelector(".addWork_error")
 
 function addWork_Verification() {
     let error = 0;
@@ -212,36 +213,40 @@ function addWork_Verification() {
         error++
     }
     if (error === 0) {
-        validation_btn.setAttribute("disabled", false)
+        validation_btn.removeAttribute("disabled")
+        addWork_error.classList.add("hidden")
     } else {
-        validation_btn.setAttribute("disabled", true)
+        validation_btn.setAttribute("disabled", "")
+        addWork_error.classList.remove("hidden")
     }
 }
 
 addWork_category.addEventListener('change', addWork_Verification);
 addWork_text.addEventListener('change', addWork_Verification);
 
+validation_btn.addEventListener('click', function (e) {
+    console.log("idsbsb")
+    e.preventDefault();
+    const data = new FormData()
+    data.append("title", addWork_text.value)
+    console.log(addWork_text.value)
+    data.append("category", addWork_category.value)
+    data.append("image", addWork_input.files[0])
+    console.log(data)
+    
+    fetch("http://localhost:5678/api/works/", {
+        method: 'POST',
+        headers: { Authorization: 'Bearer ' + localStorage.getItem('authToken') },
+        body: data
+    })
+    .then((response) => {
+        console.log(response)
+    })
+}
+)
 
 /**
  * 
- MESSAGE D'ERREUR FORMULAIRE ADDWORK
+FETCH ADDWORK
  */
 
-function addWork_error() {
-    let error = 0;
-    if (addWork_input.files[0] == 'undefined' || addWork_input.files[0] == '') {
-        error++
-    }
-    if (addWork_text.value == '') {
-        error++
-    }
-    if (addWork_category.value == '') {
-        error++
-    }
-    if (error === 0) {
-        throw new Error('Veuillez remplir tous les champs.');
-        console.log("fdjbjkfvbbjkb")
-    } else {
-        
-    }
-}

@@ -630,7 +630,7 @@ a:hover {
 	padding: 10px;
 }
 
-.popup_addWork_validation[disabled="false"] {
+.popup_addWork_validation:enabled {
 	color: white;
 	background-color: #1D6154;
 }
