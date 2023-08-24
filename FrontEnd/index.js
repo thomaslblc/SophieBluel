@@ -67,7 +67,7 @@ for (let button of filtersButtons) {
         divGallery.innerHTML = "";
 
         for (let work of filteredWorks) {
-            createWorkDOM(work)
+            createWorkDOM(work, divGallery)
         }
         resetClassButton()
 
