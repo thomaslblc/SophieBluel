@@ -76,6 +76,7 @@ for (let button of filtersButtons) {
 }
 
 /** Vérifier si le token est stocké */
+
 const isTokenStored = localStorage.getItem('authToken') !== "";
 console.log(localStorage.getItem('authToken'))
 
@@ -85,6 +86,7 @@ if (localStorage.getItem('authToken')) {
     console.log('Le token n\'est pas stocké en local');
 }
 /** Si il est stocké, afficher/cacher ce qui change dans la page d'accueil */
+
 if (localStorage.getItem('authToken')) {
     const editor_mode = document.getElementById('editor_mode');
     editor_mode.classList.remove('hidden');
@@ -104,6 +106,7 @@ if (localStorage.getItem('authToken')) {
     logout_topmenu.classList.add('shown');
 }
 /** Déconnexion */
+
 const logout_btn = document.getElementById('logout');
 logout_btn.addEventListener("click", function (e) {
     e.preventDefault();
@@ -112,10 +115,11 @@ logout_btn.addEventListener("click", function (e) {
 })
 
 /** Modale */
+
 const popup = document.querySelector(".popup");
 const popup_content = document.querySelector(".popup_content");
 const popup_btn = document.querySelector("#modify_projects");
-const popup_close = document.querySelector(".popup_close");
+const popup_close = document.querySelectorAll(".popup_close");
 const popup_addWork_btn = document.querySelector(".addphoto");
 const popup_addWork = document.querySelector(".popup_addWork");
 
@@ -127,13 +131,26 @@ const openPopup = function () {
 popup_btn.addEventListener("click", openPopup);
 
 const closePopup = function () {
+    console.log("vfhjbvjd")
     popup.classList.add("hidden");
     popup_content.classList.add("hidden");
     popup_addWork.classList.add("hidden");
 }
+for (let close_Mark of popup_close) {
+    close_Mark.addEventListener("click", closePopup);
+}
 
-popup_close.addEventListener("click", closePopup);
-/** Modale Add Works */
+const modalReturn = function() {
+    popup_addWork.classList.add("hidden");
+    popup_content.classList.remove("hidden");
+}
+
+const popup_Return = document.querySelector(".popup_return")
+
+popup_Return.addEventListener("click", modalReturn);
+
+
+/** Modale AddWorks */
 
 const openAddWork = function () {
     popup_content.classList.add("hidden");
@@ -210,45 +227,21 @@ addWork_text.addEventListener('change', addWork_Verification);
  MESSAGE D'ERREUR FORMULAIRE ADDWORK
  */
 
-
-/**
- * 
- 
-const validationButton = document.querySelector(".popup_addWork_validation");
-
-validationButton.addEventListener('click', (event) => {
-    event.preventDefault();
-    const emailValue = emailInput.value;
-    const passwordValue = passwordInput.value;
-
-    if (emailValue === '' || !isValidEmail(emailValue) || passwordValue === '') {
-        errorContainer.textContent = 'Veuillez remplir les champs correctement.';
-    } else {
-        let user = {
-            email: emailValue,
-            password: passwordValue
-        };
-        fetch("http://localhost:5678/api/users/login", {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json;charset=utf-8'
-            },
-            body: JSON.stringify(user)
-        }).then((data) => {
-            if (data.status == 401) {
-                throw new Error('Mot de passe incorrect.');
-            }
-            if (data.status == 404) {
-                throw new Error('Utilisateur inconnu.');
-            }
-            return data.json()
-        }).then((data) => {
-            localStorage.setItem('authToken', data.token);
-            window.location.href = "index.html"
-        }).catch(error => {
-            errorContainer.textContent = error;
-        })
+function addWork_error() {
+    let error = 0;
+    if (addWork_input.files[0] == 'undefined' || addWork_input.files[0] == '') {
+        error++
     }
-});
-
-*/
+    if (addWork_text.value == '') {
+        error++
+    }
+    if (addWork_category.value == '') {
+        error++
+    }
+    if (error === 0) {
+        throw new Error('Veuillez remplir tous les champs.');
+        console.log("fdjbjkfvbbjkb")
+    } else {
+        
+    }
+}
