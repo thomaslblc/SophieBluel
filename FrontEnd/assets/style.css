@@ -255,7 +255,8 @@ li:hover {
 
 .gallery img {
 	width: 100%;
-
+	height: 490px;
+	object-fit: cover;
 }
 
 #contact {
@@ -477,7 +478,7 @@ a:hover {
 
 .containerModal {
 	display: flex;
-	justify-content: space-between;
+	justify-content: flex-start;
 	width: 80%;
 	margin: auto;
 	flex-wrap: wrap;
@@ -486,9 +487,9 @@ a:hover {
 .containerModal figure {
 	position: relative;
 	width: 18%;
-	margin-bottom: 5px;
 	display: flex;
 	flex-direction: column;
+	margin: 0 5px 10px;
 }
 
 .containerModal figure img {
@@ -640,4 +641,9 @@ a:hover {
 .addWork_error {
 	color: red;
 	margin-bottom: 40px;
+}
+
+.containerStyleBar {
+	border-top: 1px solid #B3B3B3;
+	width: 80%;
 }

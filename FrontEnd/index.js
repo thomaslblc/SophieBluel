@@ -18,7 +18,7 @@ function createWorkDOM(work, container, isModal = false) {
         trashIcon.classList.add("fa-solid", "fa-trash-can")
         figureElement.appendChild(trashIcon)
         trashIcon.addEventListener("click", () => {
-            /** 
+             
             fetch("http://localhost:5678/api/works/" + work.id, {
                 method: 'DELETE',
                 headers: { Authorization: 'Bearer ' + localStorage.getItem('authToken') }
@@ -28,7 +28,7 @@ function createWorkDOM(work, container, isModal = false) {
                 .then((response) => {
                     console.log(response)
                 })
-                */
+                
 
             figureElement.remove();
             document.querySelector("figure[data-workid='" + work.id + "']").remove();
@@ -114,7 +114,7 @@ logout_btn.addEventListener("click", function (e) {
     window.location.href = "login.html";
 })
 
-/** Modale */
+/** Ouverture/Fermeture/Retour Modale */
 
 const popup = document.querySelector(".popup");
 const popup_content = document.querySelector(".popup_content");
@@ -196,14 +196,19 @@ addWork_input.addEventListener('change', function () {
     }
 })
 
+/** Vérifie que tous les champs sont remplis pour pouvoir ajouter le work */
+
 const addWork_text = document.querySelector(".addWork_text")
 const addWork_category = document.querySelector("#addWork_category")
 const validation_btn = document.querySelector(".popup_addWork_validation")
 const addWork_error = document.querySelector(".addWork_error")
 
+
+
 function addWork_Verification() {
+    console.log(addWork_input.files)
     let error = 0;
-    if (addWork_input.files[0] == 'undefined' || addWork_input.files[0] == '') {
+    if (addWork_input.files.length < 1 || addWork_input.files[0] == 'undefined' || addWork_input.files[0] == '') {
         error++
     }
     if (addWork_text.value == '') {
@@ -221,6 +226,8 @@ function addWork_Verification() {
     }
 }
 
+/** Fetch pour ajouter le work */
+
 addWork_category.addEventListener('change', addWork_Verification);
 addWork_text.addEventListener('change', addWork_Verification);
 
@@ -233,20 +240,31 @@ validation_btn.addEventListener('click', function (e) {
     data.append("category", addWork_category.value)
     data.append("image", addWork_input.files[0])
     console.log(data)
-    
+
     fetch("http://localhost:5678/api/works/", {
         method: 'POST',
         headers: { Authorization: 'Bearer ' + localStorage.getItem('authToken') },
         body: data
     })
-    .then((response) => {
-        console.log(response)
-    })
+        .then((response) => {
+            return response.json()
+            console.log(response)
+
+        })
+        .then((work) => {
+            createWorkDOM(work, divGallery)
+            createWorkDOM(work, modal, true)
+            popup.classList.add("hidden");
+            popup_addWork.classList.add("hidden");
+            addWork_input.value = ''
+            addWork_text.value = ''
+            addWork_category.value = ''
+            addWork_preview.src = ''
+            addWork_input.classList.remove("hidden");
+            addWork_icon.classList.remove("hidden");
+            addWork_label.classList.remove("hidden");
+            addWork_p.classList.remove("hidden");
+            addWork_Verification()
+        })
 }
 )
-
-/**
- * 
-FETCH ADDWORK
- */
-
