@@ -429,7 +429,8 @@ a:hover {
 	top: 10%;
 }
 
-.popup_content h2, .popup_addWork h2 {
+.popup_content h2,
+.popup_addWork h2 {
 	color: black;
 	font-family: 'Work Sans';
 	padding-top: 40px;
@@ -474,7 +475,7 @@ a:hover {
 	text-align: left;
 }
 
-.containerModal{
+.containerModal {
 	display: flex;
 	justify-content: space-between;
 	width: 80%;
@@ -501,7 +502,8 @@ a:hover {
 	border-top: #B3B3B3 solid 1px;
 }
 
-.fa-trash-can, .fa-up-down-left-right {
+.fa-trash-can,
+.fa-up-down-left-right {
 	color: white;
 	background-color: black;
 	padding: 3px;
@@ -520,7 +522,7 @@ a:hover {
 	position: relative;
 	width: 40%;
 	z-index: 2;
-	height: 660px;
+	max-height: 75%;
 	background-color: white;
 	border-radius: 10px;
 	display: flex;
@@ -573,7 +575,7 @@ a:hover {
 .addWork_block i {
 	opacity: 0.2;
 	font-size: 60px;
-	margin: 30px 0 25px ;
+	margin: 30px 0 25px;
 }
 
 .addWork_add {
@@ -633,4 +635,9 @@ a:hover {
 .popup_addWork_validation:enabled {
 	color: white;
 	background-color: #1D6154;
+}
+
+.addWork_error {
+	color: red;
+	margin-bottom: 40px;
 }
