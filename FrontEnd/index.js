@@ -18,17 +18,12 @@ function createWorkDOM(work, container, isModal = false) {
         trashIcon.classList.add("fa-solid", "fa-trash-can")
         figureElement.appendChild(trashIcon)
         trashIcon.addEventListener("click", () => {
-             
+
             fetch("http://localhost:5678/api/works/" + work.id, {
                 method: 'DELETE',
                 headers: { Authorization: 'Bearer ' + localStorage.getItem('authToken') }
 
             })
-        
-                .then((response) => {
-                    console.log(response)
-                })
-                
 
             figureElement.remove();
             document.querySelector("figure[data-workid='" + work.id + "']").remove();
@@ -78,7 +73,6 @@ for (let button of filtersButtons) {
 /** Vérifier si le token est stocké */
 
 const isTokenStored = localStorage.getItem('authToken') !== "";
-console.log(localStorage.getItem('authToken'))
 
 if (localStorage.getItem('authToken')) {
     console.log('Le token est stocké en local');
@@ -131,7 +125,6 @@ const openPopup = function () {
 popup_btn.addEventListener("click", openPopup);
 
 const closePopup = function () {
-    console.log("vfhjbvjd")
     popup.classList.add("hidden");
     popup_content.classList.add("hidden");
     popup_addWork.classList.add("hidden");
@@ -206,7 +199,6 @@ const addWork_error = document.querySelector(".addWork_error")
 
 
 function addWork_Verification() {
-    console.log(addWork_input.files)
     let error = 0;
     if (addWork_input.files.length < 1 || addWork_input.files[0] == 'undefined' || addWork_input.files[0] == '') {
         error++
@@ -232,14 +224,11 @@ addWork_category.addEventListener('change', addWork_Verification);
 addWork_text.addEventListener('change', addWork_Verification);
 
 validation_btn.addEventListener('click', function (e) {
-    console.log("idsbsb")
     e.preventDefault();
     const data = new FormData()
     data.append("title", addWork_text.value)
-    console.log(addWork_text.value)
     data.append("category", addWork_category.value)
     data.append("image", addWork_input.files[0])
-    console.log(data)
 
     fetch("http://localhost:5678/api/works/", {
         method: 'POST',
@@ -248,7 +237,6 @@ validation_btn.addEventListener('click', function (e) {
     })
         .then((response) => {
             return response.json()
-            console.log(response)
 
         })
         .then((work) => {
