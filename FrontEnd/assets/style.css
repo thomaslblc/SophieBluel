@@ -84,11 +84,11 @@ time,
 mark,
 audio,
 video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -103,547 +103,553 @@ hgroup,
 menu,
 nav,
 section {
-	display: block;
+  display: block;
 }
 
 body {
-	line-height: 1;
+  line-height: 1;
 }
 
 ol,
 ul {
-	list-style: none;
+  list-style: none;
 }
 
 blockquote,
 q {
-	quotes: none;
+  quotes: none;
 }
 
 blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-	content: '';
-	content: none;
+  content: "";
+  content: none;
 }
 
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /** end reset css**/
 body {
-	max-width: 1140px;
-	margin: auto;
-	font-family: 'Work Sans';
-	font-size: 14px;
+  max-width: 1140px;
+  margin: auto;
+  font-family: "Work Sans";
+  font-size: 14px;
 }
 
 .topmenu {
-	display: flex;
-	justify-content: space-between;
-	margin: 50px 0
+  display: flex;
+  justify-content: space-between;
+  margin: 50px 0;
 }
 
 section {
-	margin: 50px 0
+  margin: 50px 0;
 }
 
 h1 {
-	display: flex;
-	flex-direction: column;
-	font-family: 'Syne';
-	font-size: 22px;
-	font-weight: 800;
-	color: #B1663C
+  display: flex;
+  flex-direction: column;
+  font-family: "Syne";
+  font-size: 22px;
+  font-weight: 800;
+  color: #b1663c;
 }
 
-h1>span {
-	font-family: 'Work Sans';
-	font-size: 10px;
-	letter-spacing: 0.1em;
-	;
+h1 > span {
+  font-family: "Work Sans";
+  font-size: 10px;
+  letter-spacing: 0.1em;
 }
 
 h2 {
-	font-family: 'Syne';
-	font-weight: 700;
-	font-size: 30px;
-	color: #1D6154
+  font-family: "Syne";
+  font-weight: 700;
+  font-size: 30px;
+  color: #1d6154;
 }
 
 nav ul {
-	display: flex;
-	align-items: center;
-	list-style-type: none;
-
+  display: flex;
+  align-items: center;
+  list-style-type: none;
 }
 
 nav li {
-	padding: 0 10px;
-	font-size: 1.2em;
+  padding: 0 10px;
+  font-size: 1.2em;
 }
 
 li:hover {
-	color: #B1663C;
+  color: #b1663c;
 }
 
 #introduction {
-	display: flex;
-	align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 #introduction figure {
-	flex: 1
+  flex: 1;
 }
 
 #introduction img {
-	display: block;
-	margin: auto;
-	width: 80%;
+  display: block;
+  margin: auto;
+  width: 80%;
 }
 
 #introduction article {
-	flex: 1
+  flex: 1;
 }
 
 #introduction h2 {
-	margin-bottom: 1em;
+  margin-bottom: 1em;
 }
 
 #introduction p {
-	margin-bottom: 0.5em;
+  margin-bottom: 0.5em;
 }
 
 #filters {
-	display: flex;
-	max-width: 50%;
-	margin-right: auto;
-	margin-left: auto;
-	justify-content: space-around;
+  display: flex;
+  max-width: 50%;
+  margin-right: auto;
+  margin-left: auto;
+  justify-content: space-around;
 }
 
 .filter {
-	border-radius: 45px;
-	background-color: #fff;
-	border: #1D6154 1px solid;
-	padding: 10px 15px;
-	font-family: 'Syne';
-	color: #1D6154;
-	margin-bottom: 60px;
-	margin-top: 20px;
-	font-size: 16px;
+  border-radius: 45px;
+  background-color: #fff;
+  border: #1d6154 1px solid;
+  padding: 10px 15px;
+  font-family: "Syne";
+  color: #1d6154;
+  margin-bottom: 30px;
+  margin-top: 20px;
+  font-size: 16px;
 }
 
 .filter:hover,
 .filterclicked {
-	background-color: #1D6154;
-	color: #fff;
-	cursor: pointer;
+  background-color: #1d6154;
+  color: #fff;
+  cursor: pointer;
 }
 
 .gallery {
-	width: 100%;
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	grid-column-gap: 20px;
-	grid-row-gap: 20px;
-	margin-top: 20px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  margin-top: 20px;
 }
 
 .gallery img {
-	width: 100%;
-	height: 490px;
-	object-fit: cover;
+  width: 100%;
+  height: 490px;
+  object-fit: cover;
 }
 
 #contact {
-	width: 50%;
-	margin: auto;
+  width: 50%;
+  margin: auto;
 }
 
-#contact>* {
-	text-align: center;
-
+#contact > * {
+  text-align: center;
 }
 
 #contact h2 {
-	margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 #contact form {
-	text-align: left;
-	margin-top: 30px;
-	display: flex;
-	flex-direction: column;
+  text-align: left;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
 }
 
 #contact input {
-	height: 50px;
-	font-size: 1.2em;
-	border: none;
-	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+  height: 50px;
+  font-size: 1.2em;
+  border: none;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
 
 #contact label {
-	margin: 2em 0 1em 0;
+  margin: 2em 0 1em 0;
 }
 
 #contact textarea {
-	border: none;
-	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+  border: none;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
 
 input[type="submit"] {
-	font-family: 'Syne';
-	font-weight: 700;
-	color: white;
-	background-color: #1D6154;
-	margin: 2em auto;
-	width: 180px;
-	text-align: center;
-	border-radius: 60px;
+  font-family: "Syne";
+  font-weight: 700;
+  color: white;
+  background-color: #1d6154;
+  margin: 2em auto;
+  width: 180px;
+  text-align: center;
+  border-radius: 60px;
 }
 
 footer nav ul {
-	display: flex;
-	justify-content: flex-end;
-	margin: 2em
+  display: flex;
+  justify-content: flex-end;
+  margin: 2em;
 }
 
 a {
-	text-decoration: none;
-	color: black;
+  text-decoration: none;
+  color: black;
 }
 
 a:hover {
-	color: #B1663C;
+  color: #b1663c;
 }
 
 #introduction {
-	margin: 50px 0 10px 0;
+  margin: 50px 0 10px 0;
 }
 
 #editor_mode {
-	background-color: black;
-	color: white;
-	height: 60px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  background-color: black;
+  color: white;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #editor_mode button {
-	border: none;
+  border: none;
 }
 
 #editor_mode .fa-pen-to-square {
-	font-size: 18px;
-	color: #fff;
-	padding-right: 10px;
-	text-align: center;
-	display: flex;
-	justify-content: center;
+  font-size: 18px;
+  color: #fff;
+  padding-right: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .publish {
-	font-family: 'Syne';
-	font-weight: 700;
-	color: black;
-	background-color: white;
-	margin-left: 20px;
-	width: 220px;
-	text-align: center;
-	border-radius: 60px;
-	padding: 8px 10px;
+  font-family: "Syne";
+  font-weight: 700;
+  color: black;
+  background-color: white;
+  margin-left: 20px;
+  width: 220px;
+  text-align: center;
+  border-radius: 60px;
+  padding: 8px 10px;
 }
 
 .fa-pen-to-square {
-	color: black;
-	padding-right: 10px;
-	font-size: 18px;
+  color: black;
+  padding-right: 10px;
+  font-size: 18px;
 }
 
 #portfolio_title {
-	margin-bottom: 2em;
-	display: flex;
-	justify-content: center;
+  margin-bottom: 2em;
+  display: flex;
+  justify-content: center;
 }
 
 #modify_bio {
-	margin-left: 60px;
-	margin-bottom: 40px;
-	display: flex;
-	align-items: center;
+  margin-left: 60px;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
 }
 
 #modify_projects {
-	display: flex;
-	align-items: center;
-	margin-left: 20px;
-	padding: 8px;
-	text-align: center;
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+  padding: 8px;
+  text-align: center;
 }
 
 #modify_projects:hover {
-	background-color: #1D6154;
-	border-radius: 25px;
-	color: white;
-	cursor: pointer;
+  background-color: #1d6154;
+  border-radius: 25px;
+  color: white;
+  cursor: pointer;
+}
+
+#modify_projects:hover i {
+  color: white;
 }
 
 .hidden {
-	display: none !important;
+  display: none !important;
 }
 
 .shown {
-	display: flex;
+  display: flex;
 }
 
 .popup {
-	position: fixed;
-	z-index: 1;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	align-items: center;
-	background-color: rgba(0, 0, 0, 0.2);
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .popup_content {
-	position: relative;
-	width: 40%;
-	z-index: 2;
-	height: 750px;
-	background-color: white;
-	border-radius: 10px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	margin-left: auto;
-	margin-right: auto;
-	text-align: center;
-	flex-direction: column;
-	top: 10%;
+  position: relative;
+  width: 40%;
+  z-index: 2;
+  height: 800px;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  flex-direction: column;
+  top: 10%;
 }
 
 .popup_content h2,
 .popup_addWork h2 {
-	color: black;
-	font-family: 'Work Sans';
-	padding-top: 40px;
+  color: black;
+  font-family: "Work Sans";
+  padding-top: 10px;
 }
 
 .popup_close {
-	font-size: 25px;
-	width: 100%;
-	display: flex;
-	justify-content: flex-end;
-	margin: 15px 35px 0 0;
+  font-size: 25px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin: 15px 35px 0 0;
 }
 
 .popup_content button {
-	font-family: 'Syne';
-	font-weight: 700;
-	color: white;
-	background-color: #1D6154;
-	margin: 2em auto;
-	width: 180px;
-	text-align: center;
-	border-radius: 60px;
-	padding: 10px;
-	border: none;
+  font-family: "Syne";
+  font-weight: 700;
+  color: white;
+  background-color: #1d6154;
+  margin: 2em auto;
+  width: 180px;
+  text-align: center;
+  border-radius: 60px;
+  padding: 10px;
+  border: none;
 }
 
 .popup_content button:hover {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 .popup_content a {
-	color: rgb(156, 28, 28);
-	font-family: 'Syne';
-	margin-bottom: 30px;
+  color: rgb(156, 28, 28);
+  font-family: "Syne";
+  margin-bottom: 30px;
 }
 
 .popup_content a:hover {
-	text-decoration: underline
+  text-decoration: underline;
 }
 
-.popup figcaption {
-	text-align: left;
+.popup p {
+  text-align: left;
 }
 
 .containerModal {
-	display: flex;
-	justify-content: flex-start;
-	width: 80%;
-	margin: auto;
-	flex-wrap: wrap;
+  display: flex;
+  justify-content: flex-start;
+  width: 80%;
+  margin: auto;
+  flex-wrap: wrap;
 }
 
-.containerModal figure {
-	position: relative;
-	width: 18%;
-	display: flex;
-	flex-direction: column;
-	margin: 0 5px 10px;
+.containerModal div {
+  position: relative;
+  width: 18%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 5px 10px;
 }
 
-.containerModal figure img {
-	width: 100%;
-	height: 150px;
-	object-fit: cover;
+.containerModal div img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
 }
 
 .modalStyleBar {
-	width: 80%;
-	border-top: #B3B3B3 solid 1px;
+  width: 80%;
+  border-top: #b3b3b3 solid 1px;
 }
 
 .fa-trash-can,
 .fa-up-down-left-right {
-	color: white;
-	background-color: black;
-	padding: 3px;
-	border-radius: 2px;
-	position: absolute;
-	right: 4px;
-	top: 4px;
-	font-size: 15px;
+  color: white;
+  background-color: black;
+  padding: 3px;
+  border-radius: 2px;
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  font-size: 15px;
 }
 
 .fa-up-down-left-right {
-	right: 15px;
+  right: 15px;
 }
 
 .popup_addWork {
-	position: relative;
-	width: 40%;
-	z-index: 2;
-	max-height: 75%;
-	background-color: white;
-	border-radius: 10px;
-	display: flex;
-	align-items: center;
-	margin-left: auto;
-	margin-right: auto;
-	text-align: center;
-	flex-direction: column;
-	top: 10%;
+  position: relative;
+  width: 40%;
+  z-index: 2;
+  max-height: 75%;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  flex-direction: column;
+  top: 10%;
 }
 
 .addWork_icons {
-	display: flex;
-	justify-content: space-between;
-	font-size: 25px;
-	width: 90%;
-	top: 0;
-	margin-top: 25px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 25px;
+  width: 90%;
+  top: 0;
+  margin-top: 25px;
 }
 
 .addWork_icons .popup_close {
-	margin: 0;
+  margin: 0;
 }
 
 .addWork_preview {
-	width: 100%;
-	object-fit: cover;
-	margin-right: auto;
-	margin-left: auto;
-	border-radius: 5px;
+  width: 100%;
+  object-fit: cover;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 5px;
 }
 
 .addWork_block {
-	display: flex;
-	flex-direction: column;
-	max-width: 30%;
-	background-color: #E8F1F6;
-	color: rgb(18, 100, 121);
-	text-align: center;
-	border-radius: 10px;
-	font-weight: 550;
-	font-size: 17px;
-	padding-left: 25%;
-	padding-right: 25%;
-	margin-bottom: 10px;
-	margin-top: 20px;
-	border: none;
+  display: flex;
+  flex-direction: column;
+  max-width: 30%;
+  background-color: #e8f1f6;
+  color: rgb(18, 100, 121);
+  text-align: center;
+  border-radius: 10px;
+  font-weight: 550;
+  font-size: 17px;
+  padding-left: 25%;
+  padding-right: 25%;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  border: none;
+  align-items: center;
 }
 
 .addWork_block i {
-	opacity: 0.2;
-	font-size: 60px;
-	margin: 30px 0 25px;
+  opacity: 0.2;
+  font-size: 60px;
+  margin: 30px 0 25px;
 }
 
 .addWork_add {
-	display: none;
+  display: none;
 }
 
 .addWork_block label {
-	background-color: rgba(0, 0, 0, 0.2);
-	padding: 10px 20px;
-	border-radius: 50px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 10px 20px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.addWork_preview::before {
+  display: none;
 }
 
 .addWork_block p {
-	margin-bottom: 15px;
-	color: #444444;
-	font-size: 12px;
-	margin-top: 5px;
+  margin-bottom: 15px;
+  color: #444444;
+  font-size: 12px;
+  margin-top: 5px;
 }
 
 .categorization {
-	display: flex;
-	flex-direction: column;
-	width: 80%;
-	margin: 30px 0;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 30px 0;
 }
 
 .categorization label {
-	text-align: left;
-	margin-left: 2px;
+  text-align: left;
+  margin-left: 2px;
 }
 
 .addWork_input {
-	border: none;
-	box-shadow: 0px 4px 14px 0px #00000017;
-	height: 40px;
-	background-color: #fff;
-	margin: 10px 0;
+  border: none;
+  box-shadow: 0px 4px 14px 0px #00000017;
+  height: 40px;
+  background-color: #fff;
+  margin: 10px 0;
 }
 
 .popup_addWork_validation {
-	margin: 30px 0;
-	font-family: 'Syne';
-	font-weight: 700;
-	color: white;
-	background-color: #929292;
-	margin: 2em auto;
-	width: 180px;
-	text-align: center;
-	border-radius: 60px;
-	border: none;
-	padding: 10px;
+  margin: 30px 0;
+  font-family: "Syne";
+  font-weight: 700;
+  color: white;
+  background-color: #929292;
+  margin: 2em auto;
+  width: 180px;
+  text-align: center;
+  border-radius: 60px;
+  border: none;
+  padding: 10px;
 }
 
 .popup_addWork_validation:enabled {
-	color: white;
-	background-color: #1D6154;
+  color: white;
+  background-color: #1d6154;
 }
 
 .addWork_error {
-	color: red;
-	margin-bottom: 40px;
+  color: red;
+  margin-bottom: 40px;
 }
 
 .containerStyleBar {
-	border-top: 1px solid #B3B3B3;
-	width: 80%;
+  border-top: 1px solid #b3b3b3;
+  width: 80%;
 }

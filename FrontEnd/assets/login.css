@@ -1,75 +1,74 @@
 .topmenu {
-	display: flex;
-	justify-content: space-between;
-	margin: 50px 0
+  display: flex;
+  justify-content: space-between;
+  margin: 50px 0;
 }
 
 #loginNav {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 a {
-	text-decoration: none;
-	color: black;
+  text-decoration: none;
+  color: black;
 }
 
 a:hover {
-	color: #B1663C;
+  color: #b1663c;
 }
 
 .login {
-	display: flex;
-	flex-direction: column;
-	text-align: center;
-	margin-bottom: 400px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: 400px;
 }
 
 .login h2 {
-	padding-bottom: 20px;
+  padding-bottom: 20px;
 }
 
 #loginForm {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .login input {
-	width: 30%;
-	margin-bottom: 10px;
-	box-shadow: 0px 4px 14px 0px #00000017;
-	border: none;
-	padding: 10px;
+  width: 30%;
+  margin-bottom: 10px;
+  box-shadow: 0px 4px 14px 0px #00000017;
+  border: none;
+  padding: 10px;
 }
 
 .login label {
-	text-align: left;
-	width: 31%;
-	margin-bottom: 10px;
+  text-align: left;
+  width: 31%;
+  margin-bottom: 10px;
 }
 
 .login button {
-	font-family: 'Syne';
-	font-weight: 700;
-	color: white;
-	background-color: #1D6154;
-	margin: 2em auto;
-	width: 180px;
-	text-align: center;
-	border-radius: 60px;
-	padding: 10px;
-	border: none;
+  font-family: "Syne";
+  font-weight: 700;
+  color: white;
+  background-color: #1d6154;
+  margin: 2em auto;
+  width: 180px;
+  text-align: center;
+  border-radius: 60px;
+  padding: 10px;
+  border: none;
 }
 
 .login button:hover {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 .login a {
-	text-decoration: underline;
+  text-decoration: underline;
 }
 
 #errorContainer {
-	color: red;
+  color: red;
 }
