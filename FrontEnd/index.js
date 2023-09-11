@@ -1,6 +1,9 @@
 let works = [];
 const divGallery = document.querySelector(".gallery");
 const modal = document.querySelector(".containerModal");
+
+/** Fonction pour créer les balises qui accueilleront les works */
+
 function createWorkDOM(work, container, isModal = false) {
   const figureElement = document.createElement("div");
   const imageElement = document.createElement("img");
@@ -10,11 +13,15 @@ function createWorkDOM(work, container, isModal = false) {
   container.appendChild(figureElement);
   figureElement.appendChild(imageElement);
   figureElement.appendChild(captionElement);
+  
   if (!isModal) {
     captionElement.innerText = work.title;
     figureElement.dataset.workid = work.id;
   } else {
     captionElement.innerText = "éditer";
+
+    /** Supprimer un work de la database */
+
     const trashIcon = document.createElement("i");
     trashIcon.classList.add("fa-solid", "fa-trash-can");
     figureElement.appendChild(trashIcon);
@@ -31,6 +38,9 @@ function createWorkDOM(work, container, isModal = false) {
     });
   }
 }
+
+/** Récupération des works et injection dans le DOM */
+
 fetch("http://localhost:5678/api/works")
   .then((data) => data.json())
   .then((data) => {
@@ -42,13 +52,15 @@ fetch("http://localhost:5678/api/works")
       createWorkDOM(work, modal, true);
     }
   });
+
+/** Filtrage des works selon leur catégorie */
+
 const filtersButtons = document.querySelectorAll(".filter");
 function resetClassButton() {
   for (let filterButton of filtersButtons) {
     filterButton.classList.remove("filterclicked");
   }
 }
-
 for (let button of filtersButtons) {
   button.addEventListener("click", (e) => {
     const filteredWorks = works.filter((work) => {
@@ -69,7 +81,6 @@ for (let button of filtersButtons) {
     e.target.classList.add("filterclicked");
   });
 }
-
 /** Vérifier si le token est stocké */
 
 const isTokenStored = localStorage.getItem("authToken") !== "";
@@ -190,7 +201,7 @@ addWork_input.addEventListener("change", function () {
   }
 });
 
-/** Vérifie que tous les champs sont remplis pour pouvoir ajouter le work */
+/** Vérifier que tous les champs sont remplis pour pouvoir ajouter le work */
 
 const addWork_text = document.querySelector(".addWork_text");
 const addWork_category = document.querySelector("#addWork_category");
